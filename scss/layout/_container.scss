@@ -1,0 +1,27 @@
+@use "../global" as g;
+
+/*!
+layout > container
+------------------------------
+*/
+%container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+// .l-container-s {
+//     @extend %container;
+//     max-width: var(--width-content-s);
+// }
+
+.l-container {
+    @extend %container;
+    max-width: var(--width-content);
+    background-color: var(--color-bg-main);
+    padding-bottom: 3rem;
+    @include g.mq() {
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 1.5rem 3rem;
+    }
+}

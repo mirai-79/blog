@@ -1,0 +1,40 @@
+@use "../../global" as g;
+
+/*!
+page > top > side
+------------------------------
+*/
+aside {
+  padding-top: 48px;
+  @include g.mq() {
+      width: 26%;
+      padding-top: 0;
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 24px;
+}
+.newsletter-form input[type='email'] {
+  border: 2px solid var(--color-input);
+  border-radius: 10px 0 0 10px;
+  background: #fff;
+  padding: 8px 16px;
+  width: 70%;
+}
+.newsletter-form input[type='email']::placeholder {
+  color: var(--color-placeholder);
+}
+.newsletter-form input[type='submit'] {
+  background: var(--color-bg-shiny);
+  border-radius: 0 10px 10px 0;
+  color: var(--color-input);
+  cursor: pointer;
+  padding: 16px;
+}
+@include g.ho() {
+  .newsletter-form input[type='submit']:hover {
+    background: var(--color-bg-air);
+  }
+}

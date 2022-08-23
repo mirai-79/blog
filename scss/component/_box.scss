@@ -1,0 +1,74 @@
+@use "../global" as g;
+
+/*!
+component > box
+------------------------------
+*/
+.c-box {
+  margin-bottom: 48px;
+  // box-shadow: 0px 0px 0px 10px var(--color-bg-main);
+  border-top: dashed 4px var(--color-bg-shiny);
+  border-bottom: dashed 4px var(--color-bg-shiny);
+  // border-radius: 6px;
+  padding: 14px;
+  position: relative;
+  @include g.mq() {
+      margin-bottom: 56px;
+      border: solid 4px var(--color-bg-shiny);
+      border-radius: 15px;
+  }
+}
+.c-box::before {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  background: var(--color-bg-main);
+  position: absolute;
+  top: -1.3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+/* Font Awesome */
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900;
+  color: var(--color-bg-shiny);
+  font-size: 1.5rem;
+  content: '\f02d';
+}
+@include g.ho() {
+  .c-box a:hover {
+    color: var(--color-air);
+  }
+}
+.c-box:last-child {
+  margin-bottom: 0;
+}
+
+
+.c-box li {
+  border-bottom: 1px dashed var(--color-font-base);
+  padding: 16px 4px;
+  display: flex;
+  align-items: center;
+}
+.c-box li:first-child {
+  padding-top: 0;
+}
+.c-box li:last-child {
+  padding-bottom: 8px;
+  border-bottom: 0;
+}
+.c-box li::before {
+  display: inline-block;
+  content: '';
+  background: var(--color-air);
+  width: 8px;
+  height: 8px;
+  margin: 6px 10px 0 0;
+  border-radius: 50%;
+}
+.c-box li a {
+  flex: 1;
+  line-height: 1.4;
+}
